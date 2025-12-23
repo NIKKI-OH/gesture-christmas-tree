@@ -6,31 +6,146 @@
     <title>✨ 手势梦幻圣诞树 | Magic Christmas Tree</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-pink: #ff6b9d;
-            --secondary-pink: #ff8ab5;
-            --light-pink: #ffcce0;
-            --dark-blue: #0a0a1a;
-            --mid-blue: #1a1a3a;
-            --star-gold: #ffd700;
-            --snow-white: #ffffff;
-            --glow-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--mid-blue) 100%);
-            color: var(--snow-white);
-            overflow: hidden;
-            min-height: 100vh;
-        }
-        
+      /* 移动端响应式设计 - 修复版 */
+@media (max-width: 1200px) {
+    .control-panel {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        left: 20px;
+        top: auto;
+        transform: none;
+        width: auto;
+        max-height: 50vh;
+        overflow-y: auto;
+        z-index: 100;
+        background: rgba(26, 26, 58, 0.95);
+        backdrop-filter: blur(20px);
+    }
+    
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .logo-text h1 {
+        font-size: 20px;
+    }
+    
+    .logo-text p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .main-container {
+        min-height: 100vh;
+        overflow: visible;
+    }
+    
+    #canvas-container {
+        height: 60vh !important;
+        min-height: 400px;
+    }
+    
+    .control-panel {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        margin: 20px;
+        width: calc(100% - 40px);
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .gesture-indicators {
+        gap: 10px;
+    }
+    
+    .gesture-item {
+        padding: 12px;
+    }
+    
+    .camera-feed {
+        height: 150px;
+    }
+    
+    .status-bar {
+        position: relative;
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .keyboard-hint {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .key-hint {
+        margin: 5px;
+    }
+    
+    .canvas-wrapper canvas {
+        position: relative !important;
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #canvas-container {
+        height: 50vh !important;
+        min-height: 350px;
+    }
+    
+    .control-panel {
+        margin: 10px;
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+    
+    .panel-header h2 {
+        font-size: 18px;
+    }
+    
+    .gesture-text h3 {
+        font-size: 14px;
+    }
+    
+    .gesture-text p {
+        font-size: 12px;
+    }
+    
+    .camera-feed {
+        height: 120px;
+    }
+}
         /* 雪花背景 */
         #snowflakes {
             position: fixed;
