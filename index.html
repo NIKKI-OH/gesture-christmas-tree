@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Christmas Tree</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        #container {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .instruction-item {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .highlight {
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+        .status {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 107, 157, 0.2);
+            border-radius: 8px;
+        }
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>🎄 Gesture Christmas Tree</h1>
+        <p>手势控制的3D粒子圣诞树</p>
+        
+        <div class="instructions">
+            <div class="instruction-item">🎮 <strong>手势控制：</strong></div>
+            <div class="instruction-item">🖐️ 张开手掌 - 粒子自由漂浮</div>
+            <div class="instruction-item highlight">✊ 握拳 - 形成粉色圣诞树</div>
+            <div class="instruction-item">🤏 捏合 - 调整大小</div>
+            <div class="instruction-item">📱 需要摄像头和麦克风权限</div>
+        </div>
+        
+        <div id="status" class="status loading">
+            ⏳ 正在加载项目...
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <p>项目正在开发中，敬请期待！</p>
+            <p>GitHub仓库：<a href="https://github.com/yourusername/gesture-christmas-tree" style="color: #ff6b9d;">查看源码</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // 简单的状态更新
+        const statusDiv = document.getElementById('status');
+        const statusMessages = [
+            "正在初始化...",
+            "加载3D引擎...",
+            "准备手势识别...",
+            "🎉 即将完成！"
+        ];
+        
+        let index = 0;
+        setInterval(() => {
+            statusDiv.textContent = `⏳ ${statusMessages[index]}`;
+            index = (index + 1) % statusMessages.length;
+        }, 2000);
+        
+        // 检查摄像头
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            statusDiv.textContent = "✅ 浏览器支持摄像头";
+        } else {
+            statusDiv.textContent = "❌ 浏览器不支持摄像头，请使用Chrome或Edge";
+            statusDiv.style.background = "rgba(255, 0, 0, 0.2)";
+        }
+    </script>
+</body>
+</html>
