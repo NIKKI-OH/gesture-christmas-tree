@@ -1,0 +1,17 @@
+{
+  "name": "gesture-christmas-tree",
+  "version": "1.0.0",
+  "description": "Gesture-controlled 3D particle Christmas tree",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Development mode requires local setup'",
+    "build": "echo 'Build command would be here'",
+    "preview": "echo 'Preview would be here'"
+  },
+  "dependencies": {
+    "three": "^0.158.0"
+  },
+  "keywords": ["threejs", "gesture", "christmas", "interactive"],
+  "author": "Your Name",
+  "license": "MIT"
+}
