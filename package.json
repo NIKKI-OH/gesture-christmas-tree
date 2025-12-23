@@ -1,25 +1,24 @@
 {
   "name": "gesture-christmas-tree",
-  "version": "1.0.0",
-  "description": "Gesture-controlled 3D particle Christmas tree",
-  "type": "module",
+  "version": "2.0.0",
+  "description": "梦幻手势控制圣诞树 - 3D粒子特效",
+  "main": "src/main.js",
   "scripts": {
-    "dev": "echo '访问 https://nikt1.github.io/gesture-christmas-tree/'",
-    "build": "echo 'GitHub Pages会自动构建'",
-    "test": "echo '打开浏览器测试即可'"
+    "test": "echo \"打开浏览器访问页面即可测试\""
   },
   "keywords": [
-    "threejs",
-    "gesture",
     "christmas",
+    "threejs",
     "particles",
+    "gesture",
     "interactive",
-    "webgl"
+    "3d"
   ],
   "author": "Nikki",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nikt1/gesture-christmas-tree"
-  }
+  },
+  "homepage": "https://nikt1.github.io/gesture-christmas-tree"
 }
